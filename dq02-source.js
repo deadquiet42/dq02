@@ -99,7 +99,7 @@ onclick = () => {
       f = C[j < 4 ? c : W.max(c - 1, 0)][j & 3];
       v = (j < 4 ? w : 1 - w) * [.07, .05, .04, .03][j & 3] * o * sm(0, 10, t);
       x += v * W.sin(T * f * t);
-      y += v * W.sin(T * f * 1.002 * t + j);
+      y += v * W.sin(T * f * 1.002 * t + (j & 3));
     }
     if (i % E == 0 && t - pt > 2 && W.random() < .25 * sm(6, 12, t) * sm(58, 52, t))
       pt = t, pf = C[c][1 + W.random() * 3 | 0] * (W.random() < .5 ? 2 : 4), pp = W.random();
