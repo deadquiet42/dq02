@@ -104,7 +104,7 @@ onclick = () => {
     if (i % E == 0 && t - pt > 2 && W.random() < .25 * sm(6, 12, t) * sm(58, 52, t))
       pt = t, pf = C[c][1 + W.random() * 3 | 0] * (W.random() < .5 ? 2 : 4), pp = W.random();
     o = t - pt;
-    v = (W.sin(T * pf * o) + .15 * W.sin(2 * T * pf * o)) * W.min(o * 15, 1) * W.exp(-o * .9) * .06;
+    v = (W.sin(T * pf * o) + .15 * W.sin(2 * T * pf * o)) * W.min(o * 15, 1) * W.exp(-o * .9) * sm(2, 1, o) * .06;
     x += v * (1 - pp);
     y += v * pp;
     o = t % 16;
