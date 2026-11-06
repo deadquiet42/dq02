@@ -9,7 +9,7 @@ src = src.replace(/`([^`]*)`/, (_, g) => '`' + g.replace(/\n\s*/g, '').replace(/
 let min = (await minify(src, { toplevel: true, compress: { passes: 3, unsafe: true, unsafe_math: true, unsafe_arrows: true }, mangle: true, format: { comments: false } })).code;
 fs.writeFileSync('min.js', min);
 
-const packer = new Packer([{ data: min, type: 'js', action: 'eval' }], { maxMemoryMB: 32 });
+const packer = new Packer([{ data: min, type: 'js', action: 'eval' }], {});
 await packer.optimize(Number(process.env.LEVEL || 2));
 const { firstLine, secondLine } = packer.makeDecoder();
 

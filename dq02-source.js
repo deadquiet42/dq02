@@ -33,7 +33,7 @@ void main(){
   vec3 l=normalize(vec3(sin(T*.08)*.8,1,cos(T*.08)*.8)),F=vec3(0,3.4-.9*P,0),o,f,x,y,w,p,n;
   vec2 e=vec2(.001,-.001),k;
   for(int b=0;b<3;b++){
-    k=(gl_FragCoord.xy+vec2(b,(b*2)%3)/3.-.33-.5*R)/min(R.x,R.y);
+    k=(gl_FragCoord.xy+vec2(b,(b*2)%3)/3.-.33-.5*R)/R.y;
     o=vec3(.55,.28,.79)*3.*pow(4.8,P);o.xz*=r(.9*P-.9);o.y+=A*.06*pow(4.8,P);o+=F;
     f=normalize(F-o);x=normalize(cross(f,vec3(0,1,0)));y=cross(x,f);w=normalize(f*mix(4.5,2.1,P)+k.x*x+k.y*y);
     g=1.;a=0.;s=0.;
