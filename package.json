@@ -1,0 +1,14 @@
+{
+  "name": "dq02",
+  "version": "1.0.0",
+  "description": "DQ02, its complicated, by deadquiet42. Under 4kb.",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "roadroller": "^2.1.0",
+    "terser": "^5.51.2"
+  },
+  "type": "module"
+}
